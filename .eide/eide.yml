@@ -1,0 +1,79 @@
+version: "4.1"
+name: 89c52_keil_button
+type: C51
+deviceName: null
+packDir: null
+srcDirs:
+  - App/src
+  - Com/src
+  - Dri/src
+  - Int/src
+  - Mid/src
+virtualFolder:
+  name: <virtual_root>
+  files:
+    - path: main.c
+  folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: 852218915440b74ac5633687b21b8ab2
+targets:
+  Debug:
+    cppPreprocessAttrs:
+      defineList: []
+      incList:
+        - c:/Keil_v5/C51/INC/STC
+        - App/inc
+        - Com/inc
+        - Dri/inc
+        - Int/inc
+        - Mid/inc
+      libList: []
+    excludeList: []
+    settings:
+      debugger: unknown
+    toolchain: Keil_C51
+    toolchainConfigMap:
+      Keil_C51:
+        options:
+          version: 2
+          afterBuildTasks: []
+          asm-compiler: {}
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            optimization-level: level-8
+            optimization-type: SPEED
+          global:
+            ram-mode: SMALL
+            rom-mode: LARGE
+          linker:
+            output-format: elf
+            remove-unused: true
+            use-RTX: None
+      SDCC:
+        options:
+          version: 3
+          afterBuildTasks: []
+          asm-compiler: {}
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            language-c: c99
+          global:
+            device: mcs51
+            misc-controls: --iram-size 256 --xram-size 0 --code-size 8192
+            optimize-type: speed
+          linker:
+            $mainFileName: main
+            output-format: hex
+    uploadConfigMap:
+      Custom:
+        bin: ""
+        commandLine: python ./tools/stcflash.py -p COM3 "${hexFile}"
+        eraseChipCommand: ""
+      stcgal:
+        bin: ""
+        eepromImgPath: "null"
+        extraOptions: ""
+        options: .eide/stc.flash.json
+    uploader: stcgal
