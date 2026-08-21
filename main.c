@@ -1,38 +1,28 @@
-#include <STC89C5xRC.H>
 #include "Com_Util.h"
-#include "Int_Button.h"
+#include "Int_ButtonMatrix.h"
+#include "Int_LCD1602.h"
+#include <STC89C5xRC.H>
 
-sbit LED1 = P0^0;
-sbit LED2 = P0^1;
-sbit LED3 = P0^2;
-sbit LED4 = P0^3;
 
+/**
+ * @brief 主函数
+ *
+ */
 void main(void)
 {
+    uint8_t buttonNumber; // 按钮编号
+
+    Int_LCD1602_Init(); // 初始化LCD1602显示屏
+
     while (1)
     {
-        if (Int_Button_IsK41Pressed())
-        {
-            // Handle K41 button press
-            LED1 = !LED1; // Toggle LED1
-        }
+        Int_LCD1602_ShowString(1, 1, "Button: "); // 显示按钮提示信息
 
-        if (Int_Button_IsK42Pressed())
-        {
-            // Handle K42 button press
-            LED2 = !LED2; // Toggle LED2
-        }
+        buttonNumber = Int_ButtonMatrix_IsPressed(); // 检查按钮矩阵是否有按键被按下
 
-        if (Int_Button_IsK43Pressed())
+        if (buttonNumber) // 如果有按键被按下
         {
-            // Handle K43 button press
-            LED3 = !LED3; // Toggle LED3
-        }
-
-        if (Int_Button_IsK44Pressed())
-        {
-            // Handle K44 button press
-            LED4 = !LED4; // Toggle LED4
+            Int_LCD1602_ShowNum(2, 1, buttonNumber, 2); // 显示按下的按钮编号
         }
     }
 }

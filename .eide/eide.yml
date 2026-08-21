@@ -1,5 +1,5 @@
 version: "4.1"
-name: 89c52_keil_button
+name: 89c52_keil_button_matrix
 type: C51
 deviceName: null
 packDir: null
