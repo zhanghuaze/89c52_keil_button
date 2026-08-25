@@ -1,5 +1,5 @@
 version: "4.1"
-name: 89c52_keil_button_matrix
+name: 89c52_keil_timer0
 type: C51
 deviceName: null
 packDir: null
@@ -17,7 +17,7 @@ virtualFolder:
 dependenceList: []
 outDir: build
 miscInfo:
-  uid: 852218915440b74ac5633687b21b8ab2
+  uid: 538486c553f62d201f4db79a5a5c95db
 targets:
   Debug:
     cppPreprocessAttrs:
