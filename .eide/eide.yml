@@ -1,5 +1,5 @@
 version: "4.1"
-name: 89c52_keil_timer0
+name: 89c52_keil_uart
 type: C51
 deviceName: null
 packDir: null
@@ -17,7 +17,7 @@ virtualFolder:
 dependenceList: []
 outDir: build
 miscInfo:
-  uid: 538486c553f62d201f4db79a5a5c95db
+  uid: 874484f49ad3f8ab9cbdf5a1580ec892
 targets:
   Debug:
     cppPreprocessAttrs:
